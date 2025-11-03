@@ -26,10 +26,11 @@ export function showMessage(message: string, type: "success" | "error" = "succes
     top: 20px;
     right: 20px;
     padding: 16px 24px;
-    background: ${type === "success" ? "#10b981" : "#ef4444"};
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: #fce7f3; /* light pink */
+    color: #111111; /* black text for readability */
+    border: 1px solid #f5b8d2; /* subtle border */
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     z-index: 10000;
     animation: slideIn 0.3s ease-out;
   `

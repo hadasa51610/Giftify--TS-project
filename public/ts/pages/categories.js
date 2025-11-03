@@ -59,10 +59,10 @@ function displayCategories() {
         other: "🎁",
     };
     const categoryColors = {
-        back_to_school: "linear-gradient(135deg, #06b6d4 0%, #10b981 100%)",
-        winter: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)",
-        door_sign: "linear-gradient(135deg, #f97316 0%, #fde047 100%)",
-        other: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+        back_to_school: "linear-gradient(135deg, rgba(227,198,158,0.6) 0%, rgba(200,185,204,0.6) 100%)",
+        winter: "linear-gradient(135deg, rgba(200,185,204,0.6) 0%, rgba(232,232,232,0.6) 100%)",
+        door_sign: "linear-gradient(135deg, rgba(227,198,158,0.65) 0%, rgba(248,244,236,0.65) 100%)",
+        other: "linear-gradient(135deg, rgba(200,185,204,0.65) 0%, rgba(236,236,236,0.65) 100%)",
     };
     container.innerHTML = categories
         .map((category) => {

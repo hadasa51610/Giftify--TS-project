@@ -184,7 +184,7 @@ function renderCategoryButtons(): void {
   ]
   el.innerHTML = defs
     .map(
-      (d) => `<button class="btn ${selectedCategory === d.key ? "btn-primary" : "btn-secondary"}" data-key="${d.key}">${d.label}</button>`,
+      (d) => `<button class="btn btn-filter ${selectedCategory === d.key ? "btn-filter--active" : ""}" data-key="${d.key}">${d.label}</button>`,
     )
     .join("")
   Array.from(el.querySelectorAll("button")).forEach((btn) =>
@@ -208,7 +208,7 @@ function renderSortButtons(): void {
   ]
   el.innerHTML = defs
     .map(
-      (d) => `<button class="btn ${selectedSort === d.key ? "btn-primary" : "btn-secondary"}" data-key="${d.key}">${d.label}</button>`,
+      (d) => `<button class="btn btn-filter ${selectedSort === d.key ? "btn-filter--active" : ""}" data-key="${d.key}">${d.label}</button>`,
     )
     .join("")
   Array.from(el.querySelectorAll("button")).forEach((btn) =>

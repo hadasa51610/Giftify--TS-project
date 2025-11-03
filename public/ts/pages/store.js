@@ -164,7 +164,7 @@ function renderCategoryButtons() {
         { key: "other", label: getCategoryName("other") },
     ];
     el.innerHTML = defs
-        .map((d) => `<button class="btn ${selectedCategory === d.key ? "btn-primary" : "btn-secondary"}" data-key="${d.key}">${d.label}</button>`)
+        .map((d) => `<button class="btn btn-filter ${selectedCategory === d.key ? "btn-filter--active" : ""}" data-key="${d.key}">${d.label}</button>`)
         .join("");
     Array.from(el.querySelectorAll("button")).forEach((btn) => btn.addEventListener("click", (e) => {
         const key = e.currentTarget.getAttribute("data-key") || "";
@@ -184,7 +184,7 @@ function renderSortButtons() {
         { key: "popular", label: "פופולריים" },
     ];
     el.innerHTML = defs
-        .map((d) => `<button class="btn ${selectedSort === d.key ? "btn-primary" : "btn-secondary"}" data-key="${d.key}">${d.label}</button>`)
+        .map((d) => `<button class="btn btn-filter ${selectedSort === d.key ? "btn-filter--active" : ""}" data-key="${d.key}">${d.label}</button>`)
         .join("");
     Array.from(el.querySelectorAll("button")).forEach((btn) => btn.addEventListener("click", (e) => {
         const key = e.currentTarget.getAttribute("data-key") || "newest";
