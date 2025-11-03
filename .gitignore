@@ -1,0 +1,14 @@
+# node
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml
+
+# build / dist
+dist/
+build/
+out/
+
+# IDE / OS
+.vscode/
+.DS_Store

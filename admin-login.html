@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>התחברות מנהל - חנות המתנות</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">חנות המתנות - מנהל</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">חזרה לאתר</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>התחברות מנהל</h2>
+          <form id="adminLoginForm">
+            <div class="form-group">
+              <label class="form-label" for="username">שם משתמש *</label>
+              <input type="text" id="username" class="form-input" required>
+              <div class="form-error" id="usernameError"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password">סיסמה *</label>
+              <input type="password" id="password" class="form-input" required>
+              <div class="form-error" id="passwordError"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">התחבר</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 חנות המתנות. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="public/ts/pages/admin-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניהול הזמנות - חנות המתנות</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">חנות המתנות - מנהל</h1>
+        <div class="header-time" id="headerTime"></div>
+        <nav class="nav">
+          <a href="admin-dashboard.html" class="nav-link">דשבורד</a>
+          <a href="admin-products.html" class="nav-link">מוצרים</a>
+          <a href="admin-orders.html" class="nav-link active">הזמנות</a>
+          <a href="admin-statistics.html" class="nav-link">סטטיסטיקות</a>
+          <a href="#" class="nav-link" id="logoutLink">התנתק</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h2 class="section-title">ניהול הזמנות</h2>
+      <div id="ordersContent"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 חנות המתנות. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="public/ts/pages/admin-orders.js"></script>
+</body>
+</html>

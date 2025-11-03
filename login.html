@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>התחברות - חנות המתנות</title>
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">חנות המתנות</h1>
+        <div class="header-time" id="headerTime"></div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">בית</a>
+          <a href="categories.html" class="nav-link">קטגוריות</a>
+          <a href="store.html" class="nav-link">חנות</a>
+          <a href="cart.html" class="nav-link">עגלה</a>
+          <a href="login.html" class="nav-link active">התחברות</a>
+          <a href="admin-login.html" class="nav-link">מנהל</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>התחברות</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label class="form-label" for="email">אימייל *</label>
+              <input type="email" id="email" class="form-input" required>
+              <div class="form-error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="password">סיסמה *</label>
+              <input type="password" id="password" class="form-input" required>
+              <div class="form-error" id="passwordError"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">התחבר</button>
+          </form>
+          <p class="auth-link">אין לך חשבון? <a href="register.html">הירשם כאן</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 חנות המתנות. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="public/ts/pages/login.js"></script>
+</body>
+</html>
