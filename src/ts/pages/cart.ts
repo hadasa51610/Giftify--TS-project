@@ -303,9 +303,10 @@ function handleOrderSubmit(e: Event): void {
 updateNavigation()
 updateCartCount()
 displayCart()
-;(window as any).updateQuantityGlobal = updateQuantity
-;(window as any).removeItemGlobal = removeItem
-;(window as any).showCheckoutForm = showCheckoutForm
+
+window.updateQuantityGlobal = updateQuantity
+window.removeItemGlobal = removeItem
+window.showCheckoutForm = showCheckoutForm
 
 window.addEventListener("beforeunload", () => {
   clearInterval(timeInterval)

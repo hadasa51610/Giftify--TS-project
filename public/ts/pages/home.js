@@ -1,7 +1,6 @@
 import StorageManager from "../storage.js";
 import { formatPrice } from "../utils.js";
 const storage = StorageManager.getInstance();
-// Update header time with setInterval
 function updateTime() {
     const timeElement = document.getElementById("headerTime");
     if (timeElement) {
@@ -11,7 +10,6 @@ function updateTime() {
 }
 updateTime();
 const timeInterval = setInterval(updateTime, 1000);
-// Update navigation based on user session
 function updateNavigation() {
     const currentUser = storage.getCurrentUser();
     const loginLink = document.getElementById("loginLink");
@@ -32,7 +30,7 @@ function updateNavigation() {
         profileLink.style.display = "none";
     }
 }
-// Update cart count
+
 function updateCartCount() {
     const currentUser = storage.getCurrentUser();
     const cartCountElement = document.getElementById("cartCount");
@@ -49,7 +47,7 @@ function updateCartCount() {
         }
     }
 }
-// Display featured products
+
 function displayFeaturedProducts() {
     const products = storage.getProducts();
     const featuredProducts = products.slice(0, 6);
@@ -75,11 +73,10 @@ function displayFeaturedProducts() {
   `)
         .join("");
 }
-// Initialize page
+
 updateNavigation();
 updateCartCount();
 displayFeaturedProducts();
-// Cleanup on page unload
 window.addEventListener("beforeunload", () => {
     clearInterval(timeInterval);
 });

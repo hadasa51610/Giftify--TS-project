@@ -49,7 +49,6 @@ class StorageManager {
       let changed = false
 
       const renameMap: Record<string, string> = {
-        // Old samples -> new Hebrew assets (cover multiple path variants)
         "/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
         "/public/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
         "/public/images/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
@@ -98,7 +97,6 @@ class StorageManager {
         this.setProducts(products)
       }
     } catch {
-      // ignore
     }
   }
 
@@ -131,7 +129,6 @@ class StorageManager {
         this.setProducts(products)
       }
     } catch {
-      // ignore
     }
   }
 
@@ -153,7 +150,6 @@ class StorageManager {
     })
 
     const items: Product[] = [
-      // door_sign
       cat("door_sign", "שלט לדלת - אותיות בולטות", "שלט לדלת עם אותיות בולטות בעיצוב אישי", "שלט לדלת אותיות בולטות.jpg", 89.9, 20, "door_sign_1"),
       cat("door_sign", "שלט לדלת - תליוניים", "שלט לדלת עם תליונים בעיצוב ייחודי", "שלט לדלת תליוניים.jpg", 79.9, 20, "door_sign_2"),
       cat("door_sign", "תיבת דואר", "תיבת דואר לבית בעיצוב קלאסי", "תיבת דואר.jpg", 69.9, 15, "door_sign_3"),
@@ -161,7 +157,6 @@ class StorageManager {
       cat("door_sign", "שלט מלבני", "שלט מלבני נקי ומודרני", "שלט מלבני.webp", 49.9, 25, "door_sign_5"),
       cat("door_sign", "שלט אותיות", "שלט אותיות מעוצב", "שלט אותיות.jpg", 39.9, 25, "door_sign_6"),
 
-      // back_to_school
       cat("back_to_school", "תיק שרוך", "תיק שרוך קל ונוח לנשיאה", "תיק שרוך.avif", 39.9, 50, "back_to_school_1"),
       cat("back_to_school", "קופסת אוכל", "קופסת אוכל מעוצבת לבית הספר", "קופסת אוכל.webp", 29.9, 60, "back_to_school_2"),
       cat("back_to_school", "מחברות", "סט מחברות מעוצבות לבית הספר", "מחברות.avif", 49.9, 100, "back_to_school_3"),
@@ -169,7 +164,6 @@ class StorageManager {
       cat("back_to_school", "יומן שבועי", "יומן שבועי לניהול מערכת שיעורים", "יומן שבועי.webp", 24.9, 80, "back_to_school_5"),
       cat("back_to_school", "בקבוק ללימודים", "בקבוק שתייה נוח לתלמידים", "בקבוק ללימודים.avif", 34.9, 70, "back_to_school_6"),
 
-      // winter
       cat("winter", "בקבוק טרמי", "בקבוק טרמי שומר חום וקור לאורך זמן", "בקבוק טרמי.jpg", 79.9, 40, "winter_1"),
       cat("winter", "בקבוק נירוסטה טרמי", "בקבוק נירוסטה טרמי עמיד ואיכותי", "בקבוק ניירוסטה טרמי.jpg", 99.9, 35, "winter_2"),
       cat("winter", "גרביים במארז", "מארז גרביים חמים ונעימים", "גרביים במארז.jpg", 29.9, 90, "winter_3"),
@@ -195,7 +189,6 @@ class StorageManager {
           products.push(c)
           changed = true
         } else {
-          // Update name/description/category to match real image metadata
           const updated: Partial<Product> = {}
           if (existing.name !== c.name) updated.name = c.name
           if (existing.description !== c.description) updated.description = c.description
@@ -213,7 +206,6 @@ class StorageManager {
 
       if (changed) this.setProducts(products)
     } catch {
-      // ignore
     }
   }
 
@@ -223,7 +215,6 @@ class StorageManager {
     return "p_" + Math.abs(h).toString()
   }
 
-  // Products
   getProducts(): Product[] {
     const data = localStorage.getItem(this.PRODUCTS_KEY)
     return data ? JSON.parse(data) : []
@@ -264,7 +255,6 @@ class StorageManager {
     }
   }
 
-  // Users
   getUsers(): User[] {
     const data = localStorage.getItem(this.USERS_KEY)
     return data ? JSON.parse(data) : []
@@ -280,7 +270,6 @@ class StorageManager {
     localStorage.setItem(this.USERS_KEY, JSON.stringify(users))
   }
 
-  // Current User Session
   getCurrentUser(): User | null {
     const data = localStorage.getItem(this.CURRENT_USER_KEY)
     return data ? JSON.parse(data) : null
@@ -294,7 +283,6 @@ class StorageManager {
     }
   }
 
-  // Cart - per user
   private getCartKey(userId: string): string {
     return `gift_shop_cart_${userId}`
   }
@@ -341,7 +329,6 @@ class StorageManager {
     this.setCart(userId, [])
   }
 
-  // Orders
   getOrders(): Order[] {
     const data = localStorage.getItem(this.ORDERS_KEY)
     return data ? JSON.parse(data) : []
@@ -368,7 +355,6 @@ class StorageManager {
     }
   }
 
-  // Activity Log
   getActivityLog(): ActivityLog[] {
     const data = localStorage.getItem(this.ACTIVITY_KEY)
     return data ? JSON.parse(data) : []
@@ -385,7 +371,6 @@ class StorageManager {
     localStorage.setItem(this.ACTIVITY_KEY, JSON.stringify(logs))
   }
 
-  // Admin
   getAdmin(): Admin {
     const data = localStorage.getItem(this.ADMIN_KEY)
     return data ? JSON.parse(data) : { username: "admin", password: "admin123" }

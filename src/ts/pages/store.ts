@@ -164,10 +164,8 @@ function filterAndSortProducts(): void {
   }
 
   if (selectedCategory) {
-    // single category view
     displayProductsFlat(products)
   } else {
-    // grouped by category
     displayProductsGrouped(products)
   }
 }
@@ -221,7 +219,6 @@ function renderSortButtons(): void {
   )
 }
 
-// URL parameter for initial category
 const urlParams = new URLSearchParams(window.location.search)
 const categoryParam = urlParams.get("category")
 if (categoryParam) {
@@ -238,7 +235,7 @@ const searchInput = document.getElementById("searchInput")
 if (searchInput) {
   searchInput.addEventListener("input", filterAndSortProducts)
 }
-;(window as any).addToCartGlobal = addToCart
+window.addToCartGlobal = addToCart
 
 window.addEventListener("beforeunload", () => {
   clearInterval(timeInterval)

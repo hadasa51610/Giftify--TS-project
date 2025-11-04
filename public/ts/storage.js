@@ -41,7 +41,6 @@ class StorageManager {
             const products = this.getProducts();
             let changed = false;
             const renameMap = {
-                // Old samples -> new Hebrew assets (cover multiple path variants)
                 "/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
                 "/public/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
                 "/public/images/romantic-flower-bouquet.jpg": "/public/images/מחברות.avif",
@@ -87,7 +86,6 @@ class StorageManager {
             }
         }
         catch (_a) {
-            // ignore
         }
     }
     migrateProductCategories() {
@@ -117,7 +115,6 @@ class StorageManager {
             }
         }
         catch (_a) {
-            // ignore
         }
     }
     getInitialProducts() {
@@ -136,21 +133,20 @@ class StorageManager {
             createdAt: now,
         });
         const items = [
-            // door_sign
             cat("door_sign", "שלט לדלת - אותיות בולטות", "שלט לדלת עם אותיות בולטות בעיצוב אישי", "שלט לדלת אותיות בולטות.jpg", 89.9, 20, "door_sign_1"),
             cat("door_sign", "שלט לדלת - תליוניים", "שלט לדלת עם תליונים בעיצוב ייחודי", "שלט לדלת תליוניים.jpg", 79.9, 20, "door_sign_2"),
             cat("door_sign", "תיבת דואר", "תיבת דואר לבית בעיצוב קלאסי", "תיבת דואר.jpg", 69.9, 15, "door_sign_3"),
             cat("door_sign", "שלט מספר לדלת", "שלט מספר לדלת בהתאמה אישית", "שלט מספר לדלת.jpg", 59.9, 30, "door_sign_4"),
             cat("door_sign", "שלט מלבני", "שלט מלבני נקי ומודרני", "שלט מלבני.webp", 49.9, 25, "door_sign_5"),
             cat("door_sign", "שלט אותיות", "שלט אותיות מעוצב", "שלט אותיות.jpg", 39.9, 25, "door_sign_6"),
-            // back_to_school
+
             cat("back_to_school", "תיק שרוך", "תיק שרוך קל ונוח לנשיאה", "תיק שרוך.avif", 39.9, 50, "back_to_school_1"),
             cat("back_to_school", "קופסת אוכל", "קופסת אוכל מעוצבת לבית הספר", "קופסת אוכל.webp", 29.9, 60, "back_to_school_2"),
             cat("back_to_school", "מחברות", "סט מחברות מעוצבות לבית הספר", "מחברות.avif", 49.9, 100, "back_to_school_3"),
             cat("back_to_school", "מדבקות שם", "מדבקות שם להתאמה אישית למחברות ולציוד", "מדבקות שם.avif", 9.9, 200, "back_to_school_4"),
             cat("back_to_school", "יומן שבועי", "יומן שבועי לניהול מערכת שיעורים", "יומן שבועי.webp", 24.9, 80, "back_to_school_5"),
             cat("back_to_school", "בקבוק ללימודים", "בקבוק שתייה נוח לתלמידים", "בקבוק ללימודים.avif", 34.9, 70, "back_to_school_6"),
-            // winter
+
             cat("winter", "בקבוק טרמי", "בקבוק טרמי שומר חום וקור לאורך זמן", "בקבוק טרמי.jpg", 79.9, 40, "winter_1"),
             cat("winter", "בקבוק נירוסטה טרמי", "בקבוק נירוסטה טרמי עמיד ואיכותי", "בקבוק ניירוסטה טרמי.jpg", 99.9, 35, "winter_2"),
             cat("winter", "גרביים במארז", "מארז גרביים חמים ונעימים", "גרביים במארז.jpg", 29.9, 90, "winter_3"),
@@ -174,7 +170,6 @@ class StorageManager {
                     changed = true;
                 }
                 else {
-                    // Update name/description/category to match real image metadata
                     const updated = {};
                     if (existing.name !== c.name)
                         updated.name = c.name;
@@ -197,7 +192,6 @@ class StorageManager {
                 this.setProducts(products);
         }
         catch (_e) {
-            // ignore
         }
     }
     makeStableId(seed) {
@@ -206,7 +200,6 @@ class StorageManager {
             h = (h * 31 + seed.charCodeAt(i)) | 0;
         return "p_" + Math.abs(h).toString();
     }
-    // Products
     getProducts() {
         const data = localStorage.getItem(this.PRODUCTS_KEY);
         return data ? JSON.parse(data) : [];
@@ -241,7 +234,6 @@ class StorageManager {
             this.addActivity("מחיקת מוצר", `נמחק מוצר: ${product.name}`);
         }
     }
-    // Users
     getUsers() {
         const data = localStorage.getItem(this.USERS_KEY);
         return data ? JSON.parse(data) : [];
@@ -254,7 +246,6 @@ class StorageManager {
         users.push(user);
         localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
     }
-    // Current User Session
     getCurrentUser() {
         const data = localStorage.getItem(this.CURRENT_USER_KEY);
         return data ? JSON.parse(data) : null;
@@ -267,7 +258,6 @@ class StorageManager {
             localStorage.removeItem(this.CURRENT_USER_KEY);
         }
     }
-    // Cart - per user
     getCartKey(userId) {
         return `gift_shop_cart_${userId}`;
     }
@@ -305,7 +295,6 @@ class StorageManager {
     clearCart(userId) {
         this.setCart(userId, []);
     }
-    // Orders
     getOrders() {
         const data = localStorage.getItem(this.ORDERS_KEY);
         return data ? JSON.parse(data) : [];
@@ -328,7 +317,6 @@ class StorageManager {
             this.addActivity("עדכון סטטוס הזמנה", `הזמנה ${orderId} עודכנה ל-${status}`);
         }
     }
-    // Activity Log
     getActivityLog() {
         const data = localStorage.getItem(this.ACTIVITY_KEY);
         return data ? JSON.parse(data) : [];
@@ -343,7 +331,6 @@ class StorageManager {
         });
         localStorage.setItem(this.ACTIVITY_KEY, JSON.stringify(logs));
     }
-    // Admin
     getAdmin() {
         const data = localStorage.getItem(this.ADMIN_KEY);
         return data ? JSON.parse(data) : { username: "admin", password: "admin123" };

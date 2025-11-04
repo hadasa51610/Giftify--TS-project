@@ -319,9 +319,9 @@ if (addProductBtn) {
 }
 
 displayProducts()
-;(window as any).editProductGlobal = editProduct
-;(window as any).deleteProductGlobal = deleteProduct
-;(window as any).cancelFormGlobal = cancelForm
+window.editProductGlobal = editProduct
+window.deleteProductGlobal = deleteProduct
+window.cancelFormGlobal = cancelForm
 
 window.addEventListener("beforeunload", () => {
   clearInterval(timeInterval)

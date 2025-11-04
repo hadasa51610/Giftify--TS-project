@@ -148,9 +148,9 @@ function closeModal(): void {
 }
 
 displayOrders()
-;(window as any).updateOrderStatusGlobal = updateOrderStatus
-;(window as any).viewOrderDetailsGlobal = viewOrderDetails
-;(window as any).closeModalGlobal = closeModal
+window.updateOrderStatusGlobal = updateOrderStatus
+window.viewOrderDetailsGlobal = viewOrderDetails
+window.closeModalGlobal = closeModal
 
 window.addEventListener("beforeunload", () => {
   clearInterval(timeInterval)

@@ -1,5 +1,6 @@
 import StorageManager from "../storage.js"
 import { formatPrice, formatDate, getCategoryName } from "../utils.js"
+import type { Product } from "../types.js"
 
 const storage = StorageManager.getInstance()
 
@@ -55,7 +56,7 @@ function displayStatistics(): void {
       const product = storage.getProductById(productId)
       return product ? { product, quantity } : null
     })
-    .filter((item): item is { product: any; quantity: number } => item !== null)
+    .filter((item): item is { product: Product; quantity: number } => item !== null)
 
   const categorySales: Record<string, number> = {}
   orders.forEach((order) => {

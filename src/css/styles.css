@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap");
 
 :root {
-  /* User palette — light, airy pastels */
-  --primary: #805941;        /* accent (kept for brand contrast) */
+  --primary: #805941;       
   --primary-dark: #6f4c38;
-  --secondary: #e3c69e;      /* soft beige */
-  --accent: #c8b9cc;         /* lavender-gray */
-  --background: #fffbf2;     /* brighter, airy background */
-  --surface: #ffffff;        /* cards/surfaces pure white */
-  --text: #3a3a3a;           /* stronger for readability on very light bg */
+  --secondary: #e3c69e;      
+  --accent: #c8b9cc;        
+  --background: #fffbf2;     
+  --surface: #ffffff;       
+  --text: #3a3a3a;           
   --text-light: #6c6c6c;
-  --border: #eceaea;         /* subtler borders */
+  --border: #eceaea;        
   --success: #8bd3a3;
   --error: #f59aa3;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -41,7 +40,6 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
 .header {
   background: linear-gradient(135deg, rgba(227,198,158,0.70) 0%, rgba(200,185,204,0.60) 100%);
   color: white;
@@ -58,7 +56,6 @@ body {
   justify-content: space-between;
 }
 
-/* Ensure header texts are dark */
 .header .logo { color: #111111; }
 .header .logo span { color: #111111; }
 .header-time { color: #111111; }
@@ -86,7 +83,6 @@ body {
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><defs><linearGradient id='g1' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%23e3c69e'/><stop offset='100%' stop-color='%23c8b9cc'/></linearGradient></defs><rect x='6' y='14' width='52' height='40' rx='8' fill='url(%23g1)'/><rect x='6' y='18' width='52' height='6' rx='3' fill='%23ffffff' opacity='0.5'/><rect x='29' y='6' width='6' height='48' rx='3' fill='%23ffffff' opacity='0.9'/><circle cx='32' cy='18' r='8' fill='%23ffffff' opacity='0.8'/></svg>") center/cover no-repeat;
 }
 
-/* If we use an <img> for the logo, hide the pseudo */
 .logo img.logo-img + span,
 .logo img.logo-img { display: inline-block; }
 .logo img.logo-img { width: auto; height: 36px; vertical-align: middle; }
@@ -127,9 +123,7 @@ body {
   box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.12);
 }
 
-/* Admin area overrides: revert to pink theme */
 .admin .header {
-  /* Smoother, subtler gradient */
   background: linear-gradient(135deg, rgba(169,120,85,0.55) 0%, rgba(175,140,110,0.50) 45%, rgba(180,156,207,0.50) 100%);
   color: #fff;
   box-shadow: var(--shadow);
@@ -149,7 +143,6 @@ body {
 .admin .nav-link:hover { background: rgba(0,0,0,0.06); }
 .admin .nav-link.active { background: rgba(0,0,0,0.08); box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.12); }
 
-/* Admin tables vivid theme details */
 .admin .admin-table {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
@@ -160,7 +153,6 @@ body {
 .admin .admin-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.02); }
 .admin .admin-table tbody tr:hover { background: rgba(0,0,0,0.04); }
 
-/* Admin dashboard main area slightly darker than site background for depth */
 .admin .main {
   background: #f7f2ea;
 }
@@ -181,15 +173,12 @@ body {
   font-weight: 600;
 }
 
-/* Main */
 .main {
   min-height: calc(100vh - 200px);
   padding: 40px 0;
 }
 
-/* Hero */
 .hero {
-  /* Softer, distinct from header */
   background: linear-gradient(135deg, #ffffff 0%, rgba(227,198,158,0.35) 40%, rgba(200,185,204,0.35) 100%);
   color: var(--text);
   padding: 80px 20px;
@@ -230,7 +219,6 @@ body {
   animation: slideUp 0.6s ease-out 0.2s backwards;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 32px;
@@ -275,7 +263,6 @@ body {
   width: 100%;
 }
 
-/* Horizontal button groups (filters/sort) */
 .button-group {
   display: flex;
   gap: 8px;
@@ -287,7 +274,6 @@ body {
   font-size: 14px;
 }
 
-/* Filter buttons (outline when active) */
 .btn-filter {
   background: #ffffff;
   color: var(--text);
@@ -301,7 +287,6 @@ body {
   box-shadow: 0 0 0 2px rgba(128,89,65,0.08);
 }
 
-/* Store controls */
 .store-controls {
   display: flex;
   justify-content: space-between;
@@ -320,7 +305,6 @@ body {
   align-items: center;
 }
 
-/* Sections */
 .featured-section,
 .cta-section {
   margin-bottom: 60px;
@@ -334,7 +318,6 @@ body {
   color: var(--text);
 }
 
-/* Products Grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -405,7 +388,6 @@ body {
   color: var(--primary);
 }
 
-/* Subtle card glass effect on pastel bg */
 .product-card {
   backdrop-filter: saturate(1.05) blur(1px);
 }
@@ -415,7 +397,6 @@ body {
   color: var(--text-light);
 }
 
-/* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
   color: white;
@@ -442,7 +423,6 @@ body {
   opacity: 0.95;
 }
 
-/* Footer */
 .footer {
   background: var(--text);
   color: white;
@@ -451,7 +431,6 @@ body {
   margin-top: 60px;
 }
 
-/* Categories grid and cards */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -490,12 +469,10 @@ body {
   opacity: 0.9;
 }
 
-/* Grouped headings in store */
 #productsGrid > .section-title {
   text-align: right;
 }
 
-/* Cart and profile beautify */
 .cart-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -548,7 +525,6 @@ body {
   margin-bottom: 16px;
 }
 
-/* Profile page enhanced styling */
 .profile-container { display: grid; gap: 20px; }
 .profile-header h2 { margin: 0 0 8px 0; color: var(--text); font-weight: 800; }
 .profile-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
@@ -566,7 +542,6 @@ body {
 .profile-info, .profile-orders { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
 .profile-info h3, .profile-orders h3 { margin-top: 0; color: var(--text); }
 
-/* Order success page */
 .success-message {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -584,7 +559,6 @@ body {
 .order-item:last-child { border-bottom: none; }
 .order-total { display: flex; justify-content: space-between; padding-top: 12px; font-weight: 800; color: var(--primary); }
 
-/* Extra responsive tweaks */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -600,7 +574,6 @@ body {
   .hero { padding: 60px 16px; }
 }
 
-/* Forms */
 .form-group {
   margin-bottom: 20px;
 }
@@ -643,7 +616,6 @@ body {
   margin-top: 4px;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -696,7 +668,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .cart-container {
     grid-template-columns: 1fr;
@@ -853,7 +824,6 @@ body {
   }
 }
 
-/* Admin Stats */
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -904,7 +874,6 @@ body {
   margin-bottom: 8px;
 }
 
-/* Admin Header Actions */
 .admin-header-actions {
   display: flex;
   justify-content: space-between;
@@ -914,7 +883,6 @@ body {
   gap: 16px;
 }
 
-/* Admin Table */
 .admin-table {
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -1008,7 +976,6 @@ body {
   border-color: var(--primary);
 }
 
-/* Admin Form Card */
 .admin-form-card {
   background: var(--surface);
   padding: 32px;
@@ -1029,7 +996,6 @@ body {
   margin-top: 24px;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1120,7 +1086,6 @@ body {
   margin-top: 16px;
 }
 
-/* Statistics Page */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1229,7 +1194,6 @@ body {
   font-size: 12px;
 }
 
-/* Smooth scrolling and improved animations */
 html {
   scroll-behavior: smooth;
 }
@@ -1256,7 +1220,6 @@ html {
   }
 }
 
-/* Focus states for accessibility */
 button:focus,
 a:focus,
 input:focus,
@@ -1266,7 +1229,6 @@ textarea:focus {
   outline-offset: 2px;
 }
 
-/* Disabled button styles */
 button:disabled,
 .btn:disabled {
   opacity: 0.5;
@@ -1278,7 +1240,6 @@ button:disabled:hover,
   transform: none;
 }
 
-/* Loading states */
 .loading {
   display: inline-block;
   width: 20px;
@@ -1295,7 +1256,6 @@ button:disabled:hover,
   }
 }
 
-/* Print styles */
 @media print {
   .header,
   .footer,
