@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>אזור אישי - חנות המתנות</title>
-  <link rel="stylesheet" href="src/css/styles.css">
+  <title>חנות - Giftify</title>
+  <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <h1 class="logo"><img src="public/images/logo.svg" alt="Giftify logo" class="logo-img" /><span>Giftify</span></h1>
+        <h1 class="logo"><img src="../public/images/logo.svg" alt="Giftify logo" class="logo-img" /><span>Giftify</span></h1>
         <div class="header-time" id="headerTime"></div>
         <nav class="nav">
-          <a href="index.html" class="nav-link">בית</a>
+          <a href="../index.html" class="nav-link">בית</a>
           <a href="categories.html" class="nav-link">קטגוריות</a>
-          <a href="store.html" class="nav-link">חנות</a>
+          <a href="store.html" class="nav-link active">חנות</a>
           <a href="cart.html" class="nav-link">עגלה <span id="cartCount" class="cart-badge">0</span></a>
-          <a href="profile.html" class="nav-link active">אזור אישי</a>
+          <a href="profile.html" class="nav-link" id="profileLink">אזור אישי</a>
           <a href="login.html" class="nav-link" id="loginLink">התחברות</a>
           <a href="admin-login.html" class="nav-link">מנהל</a>
         </nav>
@@ -27,7 +27,16 @@
 
   <main class="main">
     <div class="container">
-      <div id="profileContent"></div>
+      <div class="store-controls">
+        <div class="search-box">
+          <input type="text" id="searchInput" class="form-input" placeholder="חיפוש מוצרים...">
+        </div>
+        <div class="filter-controls">
+          <div id="categoryButtons" class="button-group"></div>
+          <div id="sortButtons" class="button-group"></div>
+        </div>
+      </div>
+      <div id="productsGrid"></div>
     </div>
   </main>
 
@@ -37,6 +46,6 @@
     </div>
   </footer>
 
-  <script type="module" src="public/ts/pages/profile.js"></script>
+  <script type="module" src="../public/ts/pages/store.js"></script>
 </body>
 </html>

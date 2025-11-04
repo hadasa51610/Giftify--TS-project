@@ -27,7 +27,7 @@ function updateNavigation(): void {
     loginLink.onclick = (e) => {
       e.preventDefault()
       storage.setCurrentUser(null)
-      window.location.href = "index.html"
+      window.location.href = "../index.html"
     }
     profileLink.style.display = "block"
   } else if (loginLink && profileLink) {

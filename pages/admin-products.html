@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ניהול הזמנות - חנות המתנות</title>
-  <link rel="stylesheet" href="src/css/styles.css">
+  <title>ניהול מוצרים - חנות המתנות</title>
+  <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body class="admin">
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <h1 class="logo"><img src="public/images/logo.svg" alt="Giftify logo" class="logo-img" /><span>Giftify – מנהל</span></h1>
+        <h1 class="logo"><img src="../public/images/logo.svg" alt="Giftify logo" class="logo-img" /><span>Giftify – מנהל</span></h1>
         <div class="header-time" id="headerTime"></div>
         <nav class="nav">
           <a href="admin-dashboard.html" class="nav-link">דשבורד</a>
-          <a href="admin-products.html" class="nav-link">מוצרים</a>
-          <a href="admin-orders.html" class="nav-link active">הזמנות</a>
+          <a href="admin-products.html" class="nav-link active">מוצרים</a>
+          <a href="admin-orders.html" class="nav-link">הזמנות</a>
           <a href="admin-statistics.html" class="nav-link">סטטיסטיקות</a>
           <a href="#" class="nav-link" id="logoutLink">התנתק</a>
         </nav>
@@ -25,8 +25,12 @@
 
   <main class="main">
     <div class="container">
-      <h2 class="section-title">ניהול הזמנות</h2>
-      <div id="ordersContent"></div>
+      <div class="admin-header-actions">
+        <h2 class="section-title">ניהול מוצרים</h2>
+        <button class="btn btn-primary" id="addProductBtn">הוסף מוצר חדש</button>
+      </div>
+      <div id="productsContent"></div>
+      <div id="productFormContainer" style="display: none;"></div>
     </div>
   </main>
 
@@ -36,6 +40,6 @@
     </div>
   </footer>
 
-  <script type="module" src="public/ts/pages/admin-orders.js"></script>
+  <script type="module" src="../public/ts/pages/admin-products.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@ function updateNavigation(): void {
     loginLink.onclick = (e) => {
       e.preventDefault()
       storage.setCurrentUser(null)
-      window.location.href = "index.html"
+      window.location.href = "../index.html"
     }
   } else if (loginLink) {
     loginLink.textContent = "התחברות"
